@@ -36,14 +36,14 @@ console.log(formatoFecha.test("01-10-2020 17:12"));
 
 // Como podemos ver no retornara un true pero nuestra expresioon regular es difícil de que se entienda
 
-// Si queremos evitar el unico uso de un numero usamos ^ 
+//3.- Si queremos evitar el unico uso de un numero usamos ^ 
 
 const sinNumeroFavorito = /[^9]/; 
 
 console.log(sinNumeroFavorito.test("999")); // false, ya que solo hay numeors 9
 console.log(sinNumeroFavorito.test("1239")); // true, porque hay mas numeros y no solamente el 9
 
-// si queremos hacer coincidir un número entero, una secuencia de uno o más dígitos, para ello solo agregamos +
+//4.- si queremos hacer coincidir un número entero, una secuencia de uno o más dígitos, para ello solo agregamos +
 console.log(/\d+/.test("123"));
 // el mas(+) al final de la expresion indica que esperamos caracteres de este tipo
 
@@ -56,7 +56,7 @@ console.log(opcionales.test("colour"));
 // ambos arrojaran un true porque coiciden en la expresión, y es así como se usan los opcionales.
 
 
-// Tambien podemos encotrar algo en las expresion regular al final una i
+//5.- Tambien podemos encotrar algo en las expresion regular al final una i
 
 let caseSensitive = /boo+(hoo+)+/i;
 console.log(caseSensitive.test("Boohoohooooo"));
@@ -69,7 +69,7 @@ let repetir = /\d{2,4}/; // minimo 2 maximo 4
 console.log(repetir.test("1")); // solo es uno por tanto retorna false
 console.log(repetir.test("11")); // ahora son dos y retorna true
 
-// Ahora llegamos a un punto donde usaremos exec en ves de tes, test solo funciona para saber si esta correcta nuestra expresion pero
+//6.- Ahora llegamos a un punto donde usaremos exec en ves de tes, test solo funciona para saber si esta correcta nuestra expresion pero
 // exec hace algo mas, por ejemplo:
 
 let nuevoExec = /[a-g]/;
@@ -81,4 +81,9 @@ console.log(nuevoExec.exec("zzg").index);
 // Todo lo que esta en parentesis y coincida con la condicion la mostrará en el metodo exec
 let masCoincidencias = /'([^']*)'/;
 console.log(masCoincidencias.exec("ella dice 'hola'"));
+
+//Al usar el metodo exec nos muestra las coincidencias y en caso de que no existan exec mostrara como undefined(en el uso de parentesis)
+console.log(/mal(o)?/.exec("mal"));
+
+
 
