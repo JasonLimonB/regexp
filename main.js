@@ -56,3 +56,29 @@ console.log(opcionales.test("colour"));
 // ambos arrojaran un true porque coiciden en la expresión, y es así como se usan los opcionales.
 
 
+// Tambien podemos encotrar algo en las expresion regular al final una i
+
+let caseSensitive = /boo+(hoo+)+/i;
+console.log(caseSensitive.test("Boohoohooooo"));
+console.log(caseSensitive.test("boohoooo"));
+
+// Esto quiere decir que no distingue entre mayusculas y minusculas por eso ambos ejemplo retornan true
+
+// Tambien podemos indicar el minimo y el maximo de caracteres que pueen repetirse
+let repetir = /\d{2,4}/; // minimo 2 maximo 4
+console.log(repetir.test("1")); // solo es uno por tanto retorna false
+console.log(repetir.test("11")); // ahora son dos y retorna true
+
+// Ahora llegamos a un punto donde usaremos exec en ves de tes, test solo funciona para saber si esta correcta nuestra expresion pero
+// exec hace algo mas, por ejemplo:
+
+let nuevoExec = /[a-g]/;
+console.log(nuevoExec.exec("zabx"));
+console.log(nuevoExec.exec("zzg").index);
+
+// Esto no retorna un arreglo indicando donde inicia la coincidencia de la expresion, el indice y el input que está
+
+// Todo lo que esta en parentesis y coincida con la condicion la mostrará en el metodo exec
+let masCoincidencias = /'([^']*)'/;
+console.log(masCoincidencias.exec("ella dice 'hola'"));
+
