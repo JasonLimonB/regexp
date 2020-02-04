@@ -91,7 +91,7 @@ console.log(/mal(o)?/.exec("mal"));
 const fechaNueva = /\d{2}-\d{2}-\d{2,4}/;
 console.log(fechaNueva.exec("09-10-2000"));
 
-// Para dar un limite de inicio o fin  podemos usar $ y ^, veamo un pequeño ejemplo
+// Para dar un limite de inicio o fin  podemos usar $ y ^
 
 // este ejemplo es para que inicie y finalize con letra
 console.log(/\bcat\b/.test("concatenate"));// false
@@ -109,3 +109,17 @@ console.log(numSaludo.test("33 buenos"));
 console.log(numSaludo.test("3 holaadio"));
 
 // ¿Puedes explicar esta expresion regular?   /\b([01]+b|[\da-f]+h|\d+)\b/.
+
+// Ahora veamos un momento el método replace en javascript
+// Como sabemos este método reemplazará quellas caracteres que le indiquemos pero solamente el primero que haga match
+
+console.log("papa".replace("p", "m")); // imprimirá mapa
+
+// como podemos ver solo hace el replac con la primer p, pero si queremos podemos usar un poco de expresiones regulares como:
+
+console.log("gpapa".replace("Borobudur".replace(/[ou]/, "a"));console.log("papa".replace("Borobudur".replace(/[ou]/, "a")); 
+// igual tomara la primer etra que haga match con [ou]
+            
+// para que el replace aplique a todas las coincidencias usamos lo siguiente
+console.log("papa".replace(/p/g, "m")); // reemplazará las p por m, y en este caso por ser una expresion regular omitimos ""
+
