@@ -8,7 +8,7 @@ Solo son apuntes que creo que son importantes para el uso de expresiones regular
 Los apuntes estan en el archivo js por lo tanto ahi encontraras toda la información con los comentarios necesario
 
 
-### ALgunas páginas de ayuda
+### Algunas páginas de ayuda
 
 
  [Regexr](https://regexr.com/)
