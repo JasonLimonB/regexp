@@ -86,4 +86,26 @@ console.log(masCoincidencias.exec("ella dice 'hola'"));
 console.log(/mal(o)?/.exec("mal"));
 
 
+// Ahora una expresion regular para una fecha
 
+const fechaNueva = /\d{2}-\d{2}-\d{2,4}/;
+console.log(fechaNueva.exec("09-10-2000"));
+
+// Para dar un limite de inicio o fin  podemos usar $ y ^, veamo un pequeño ejemplo
+
+// este ejemplo es para que inicie y finalize con letra
+console.log(/\bcat\b/.test("concatenate"));// false
+console.log(/\bcat\b/.test("cat"));// true
+console.log(/\bcat/.test("catnate"));// true
+console.log(/cat\b/.test("catendercat"));// true
+
+/*
+    Digamos que queremos que nuestra expresion regular inicie con un numero pero seguido de ello
+    queremos una palabra como (hola, adios, buenas) usamos el simbolo de tuberia o pipe ( | )
+*/
+
+const numSaludo = /\b\d+ (hola|bye|bueno)s?\b/; // los parentesis es para marcar el limite de los pipes
+console.log(numSaludo.test("33 buenos"));
+console.log(numSaludo.test("3 holaadio"));
+
+// ¿Puedes explicar esta expresion regular?   /\b([01]+b|[\da-f]+h|\d+)\b/.
