@@ -1,3 +1,5 @@
+// NOTA: En las expresiones regulares si importan los espacios
+
 // Como primer paso podemos usar dos formas de hacer expresiones regulares
 // 1.- Forma por medio de un objeto
 const objRegEx = new RegExp("abc"); // le pasamos por parametro lo que seran los datos permitidos
@@ -117,9 +119,27 @@ console.log("papa".replace("p", "m")); // imprimirá mapa
 
 // como podemos ver solo hace el replace con la primer p, pero si queremos podemos usar un poco de expresiones regulares como:
 
-console.log("gpapa".replace("Borobudur".replace(/[ou]/, "a"));console.log("papa".replace("Borobudur".replace(/[ou]/, "a")); 
+console.log("papa".replace("Borobudur".replace(/[ou]/, "a")); 
 // a la primera que haga match con [ou]
             
 // para que el replace aplique a todas las coincidencias usamos lo siguiente
 console.log("papa".replace(/p/g, "m")); // reemplazará las p por m, y en este caso por ser una expresión regular omitimos ""
+
+// Existe un punto bastante fuerte que tenemos al usar expresiones regulares con el método replace, esto es el de referenciar
+/*
+    Tenemos un string con nombres de personas que tiene el formato de apellido, nombre y queremos pasarlo al formato nombre, apellido
+    y cada nombre está separado por un salto de linea.
+*/
+
+let nombresRef = "Apellido1, Nombre1\n Apellido2, Nombre2";
+console.log(nombresRef.replace(/(\w+), (\w+)/g, "$2 $1"));
+// Esto hara que imprima el nombre seguido del apellido, la referencia se da en el us de $1 $2
+
+// Ahora solo para complementar un poco con el método replace mencionaremos que podemos pasar funciones para 
+// ser ejecutadas cuand hay match
+
+const animales = "los gatos y perros son tiernos";
+
+console.log(animales.replace(/\b(gatos|perros)\b/g, str => str.toUpperCase()));
+// los GATOS y PERROS son tiernos
 
