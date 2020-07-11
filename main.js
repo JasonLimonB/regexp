@@ -1,5 +1,6 @@
 // NOTA: En las expresiones regulares si importan los espacios
 
+
 // Como primer paso podemos usar dos formas de hacer expresiones regulares
 // 1.- Forma por medio de un objeto
 const objRegEx = new RegExp("abc"); // le pasamos por parametro lo que seran los datos permitidos
