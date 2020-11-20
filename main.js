@@ -144,3 +144,6 @@ const animales = "los gatos y perros son tiernos";
 console.log(animales.replace(/\b(gatos|perros)\b/g, str => str.toUpperCase()));
 // los GATOS y PERROS son tiernos
 
+// Ahora un apunte estra par trabajar con el formato de fechas pero con diagonales
+
+//  \d{2}[/\\]\d{2}[/\\]\d{4}
